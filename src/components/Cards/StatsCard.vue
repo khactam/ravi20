@@ -1,6 +1,6 @@
 <template>
   <md-card class="md-card-stats">
-    <md-card-header :data-background-color="dataBackgroundColor">
+    <md-card-header class="md-card-header-customized" :data-background-color="dataBackgroundColor">
       <slot name="header"></slot>
     </md-card-header>
 
@@ -24,3 +24,8 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.md-card-header-customized {
+  padding: 5px!important;
+}
+</style>
