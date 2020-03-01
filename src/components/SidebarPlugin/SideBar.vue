@@ -11,14 +11,6 @@
           <img :src="imgLogo" alt="" />
         </div>
       </a>
-
-      <a
-        href="https://vietskitchen.fi"
-        target="_blank"
-        class="simple-text logo-normal"
-      >
-        {{ title }}
-      </a>
     </div>
     <div class="sidebar-wrapper">
       <slot name="content"></slot>
@@ -91,6 +83,9 @@ export default {
 <style>
 @media screen and (min-width: 991px) {
   .nav-mobile-menu {
+    display: none;
+  }
+  .logo::after{
     display: none;
   }
 }
