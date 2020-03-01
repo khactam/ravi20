@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="md-layout">
-      <div class="md-layout-item md-medium-size-25 md-xsmall-size-25 md-size-25">
+      <div class="md-layout-item md-medium-size-30 md-xsmall-size-30 md-size-30">
         <h3>Order</h3>
         <draggable :list="myArray1" group="people">
           <div v-for="(element, id) in  myArray1" :key="id">
@@ -11,11 +11,16 @@
               </template>
               <template slot="content">
                 <span>Order title</span>
-                <p class="category">{{element.name}}</p>
+                <md-card>
+                  <md-card-content>
+                    <ordered-table table-header-color="green"></ordered-table>
+                  </md-card-content>
+                </md-card>
               </template>
               <template slot="footer">
                 <div class="stats">
-                  <b>Created</b>: Last 24 Hours <br>
+                  <b>Created</b>: Last 24 Hours
+                  <br />
                   <b>Moved</b>: Last 24 Hours
                 </div>
               </template>
@@ -23,21 +28,27 @@
           </div>
         </draggable>
       </div>
-      <div class="md-layout-item md-medium-size-25 md-xsmall-size-25 md-size-25">
+      <div class="md-layout-item md-medium-size-30 md-xsmall-size-30 md-size-30">
         <h3>Kitchen</h3>
         <draggable :list="myArray2" group="people">
-          <div v-for="(element, id) in myArray2" :key="id">
-            <stats-card data-background-color="green">
+          <div v-for="(element, id) in  myArray2" :key="id">
+            <stats-card data-background-color="green" @click.native="onOrderClick(id)">
               <template slot="header">
                 <md-icon>store</md-icon>
               </template>
               <template slot="content">
-                <span>Test</span>
-                <p class="category">{{element.name}}</p>
+                <span>Order title</span>
+                <md-card>
+                  <md-card-content>
+                    <ordered-table table-header-color="green"></ordered-table>
+                  </md-card-content>
+                </md-card>
               </template>
               <template slot="footer">
                 <div class="stats">
-                  <md-icon>date_range</md-icon>Last 24 Hours
+                  <b>Created</b>: Last 24 Hours
+                  <br />
+                  <b>Moved</b>: Last 24 Hours
                 </div>
               </template>
             </stats-card>
